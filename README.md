@@ -5,7 +5,7 @@ Docker image for Kafka message broker including Zookeeper
 Build
 -----
 ```
-$ docker build .
+$ docker build . -t kafka-zookeeper
 [...]
 Successfully built 9b382d40bccc
 ```
@@ -13,7 +13,7 @@ Successfully built 9b382d40bccc
 Run container
 -------------
 ```
-docker run -p 2181:2181 -p 9092:9092 -e ADVERTISED_HOST=localhost 9b382d40bccc
+docker run -d -p 2181:2181 -p 9092:9092 -e ADVERTISED_HOST=localhost --name=kafka-zookeeper kafka-zookeeper
 ```
 
 Test
